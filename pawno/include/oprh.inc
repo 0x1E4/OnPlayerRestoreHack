@@ -70,7 +70,7 @@ public OnPlayerUpdate(playerid)
     			if(bakwan > ac_Armour && !Bit_Get(ac_ArmSafe, playerid))
     			{
 			       #if defined OnPlayerRestoreHack
-	            	             OnPlayerRestoreHack(playerid, TYPE_ARMOIR_HACK);
+	            	             OnPlayerRestoreHack(playerid, TYPE_ARMOUR_HACK);
 			       #else
 			             #error You must declarate OnPlayerRestoreHack on your script!
 			       #endif
