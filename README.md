@@ -8,12 +8,12 @@ public OnPlayerRestoreHack(playerid, type)
 {
     switch(type)
     {
-         case 1:
+         case TYPE_HEALTH_HACK:
          {
                SendClientMessage(playerid, -1, "You are banned from server because Health Hack");
                Ban(playerid);
          }
-         case 2:
+         case TYPE_ARMOUR_HACK:
          {
                SendClientMessage(playerid, -1, "You are banned from server because Armour Hack");
                Ban(playerid);
