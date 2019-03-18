@@ -1,6 +1,9 @@
 #include <a_samp>
 #include <YSI\y_bit>
 
+#define	TYPE_HEALTH_HACK	(1)
+#define TYPE_ARMOUR_HACK	(2)
+
 static
 	Float:ac_Health,
 	Float:ac_Armour,
@@ -50,7 +53,7 @@ public OnPlayerUpdate(playerid)
     			if(gorengan > ac_Health && !Bit_Get(ac_HeSafe, playerid))
     			{
 			       #if defined OnPlayerRestoreHack
-	            	             OnPlayerRestoreHack(playerid, 1);
+	            	             OnPlayerRestoreHack(playerid, TYPE_HEALTH_HACK);
 			       #else
 			             #error You must declarate OnPlayerRestoreHack on your script!
 			       #endif
@@ -67,7 +70,7 @@ public OnPlayerUpdate(playerid)
     			if(bakwan > ac_Armour && !Bit_Get(ac_ArmSafe, playerid))
     			{
 			       #if defined OnPlayerRestoreHack
-	            	             OnPlayerRestoreHack(playerid, 1);
+	            	             OnPlayerRestoreHack(playerid, TYPE_ARMOIR_HACK);
 			       #else
 			             #error You must declarate OnPlayerRestoreHack on your script!
 			       #endif
