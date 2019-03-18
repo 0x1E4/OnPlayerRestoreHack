@@ -49,7 +49,11 @@ public OnPlayerUpdate(playerid)
     		{
     			if(gorengan > ac_Health && !Bit_Get(ac_HeSafe, playerid))
     			{
-	            	       CallRemoteFunction("OnPlayerRestoreHack", "ii", playerid, 1);
+			       #if defined OnPlayerRestoreHack
+	            	             OnPlayerRestoreHack(playerid, 1);
+			       #else
+			             #error You must declarate OnPlayerRestoreHack on your script!
+			       #endif
 	            	       Bit_Set(ac_HeSafe, playerid, false);
     			}
     			else
@@ -62,7 +66,11 @@ public OnPlayerUpdate(playerid)
     		{
     			if(bakwan > ac_Armour && !Bit_Get(ac_ArmSafe, playerid))
     			{
-	            	        CallRemoteFunction("OnPlayerRestoreHack", "ii", playerid, 2);
+			       #if defined OnPlayerRestoreHack
+	            	             OnPlayerRestoreHack(playerid, 1);
+			       #else
+			             #error You must declarate OnPlayerRestoreHack on your script!
+			       #endif
 	            	        Bit_Set(ac_ArmSafe, playerid, false);
     			}
     			else
